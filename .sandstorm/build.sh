@@ -5,6 +5,9 @@ set -euo pipefail
 
 cd /opt/app
 
+rm -rf data
+ln -sf /var data
+
 if [ -f /opt/app/composer.json ] ; then
     if [ ! -f composer.phar ] ; then
         curl -sS https://getcomposer.org/installer | php
